@@ -13,6 +13,7 @@ namespace :passenger do
     end
 
     command << "--pid-file #{fetch :passenger_pid_file}"
+    command << "--log-file #{fetch :passenger_log_file}"
     command << "--environment #{fetch :rails_env}"
     command << "--daemonize"
 
@@ -69,6 +70,7 @@ end
 namespace :load do
   task :defaults do
     set :passenger_pid_file,    -> { Pathname.new(current_path).join('tmp', 'pids', "#{fetch :rails_env}.pid") }
+    set :passenger_log_file,    -> { Pathname.new(current_path).join('log', "#{fetch :rails_env}.pid") }
     set :passenger_socket_file, -> { Pathname.new(current_path).join('tmp', 'sockets', "#{fetch :rails_env}.sock") }
     set :passenger_address,     '127.0.0.1'
     set :passenger_port,        3000
