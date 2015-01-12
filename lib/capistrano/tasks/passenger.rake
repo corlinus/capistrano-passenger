@@ -70,7 +70,7 @@ end
 namespace :load do
   task :defaults do
     set :passenger_pid_file,    -> { Pathname.new(current_path).join('tmp', 'pids', "#{fetch :rails_env}.pid") }
-    set :passenger_log_file,    -> { Pathname.new(current_path).join('log', "#{fetch :rails_env}.pid") }
+    set :passenger_log_file,    -> { Pathname.new(current_path).join('log', "#{fetch :rails_env}.log") }
     set :passenger_socket_file, -> { Pathname.new(current_path).join('tmp', 'sockets', "#{fetch :rails_env}.sock") }
     set :passenger_address,     '127.0.0.1'
     set :passenger_port,        3000

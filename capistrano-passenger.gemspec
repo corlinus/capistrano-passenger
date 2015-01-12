@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "capistrano-passenger"
-  spec.version       = '0.0.1'
+  spec.version       = '0.1.0'
   spec.authors       = ["corlinus"]
   spec.email         = ["corlinus@gmail.com\n"]
   spec.summary       = %q{passenger integration for capistrano}
